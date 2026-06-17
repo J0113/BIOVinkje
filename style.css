@@ -1,0 +1,249 @@
+:root {
+  --bg: #f4f3ef;
+  --surface: #ffffff;
+  --ink: #1b1c1e;
+  --muted: #6b6f76;
+  --line: #e3e1da;
+  --accent: #14532d;
+  --accent-soft: #e7efe9;
+  --shadow: 0 1px 2px rgba(20, 20, 20, .04), 0 12px 32px rgba(20, 20, 20, .06);
+  --maxw: 760px;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: min(100% - 3rem, var(--maxw)); margin-inline: auto; }
+
+/* ---- topbar ---- */
+.topbar {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.topbar-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: -.02em;
+  font-size: 1.15rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.brand-accent { color: var(--accent); }
+.tm { font-size: .6em; vertical-align: super; color: var(--muted); }
+.brand-sub {
+  color: var(--muted);
+  font-size: .8rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---- hero ---- */
+.hero { padding: 5rem 0 3.5rem; }
+.eyebrow {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .72rem;
+  color: var(--accent);
+  margin: 0 0 1.25rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+}
+.lede { font-size: 1.18rem; color: #34373c; max-width: 62ch; margin: 0 0 2rem; }
+.cta-scroll {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .95rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+.cta-scroll:hover { opacity: .7; }
+
+/* ---- selector ---- */
+.selector { padding: 2.5rem 0; border-top: 1px solid var(--line); background: var(--surface); }
+.selector h2,
+.result h2 {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0 0 1.25rem;
+}
+.field { display: block; }
+.field-label {
+  display: block;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .85rem;
+  color: var(--muted);
+  margin-bottom: .5rem;
+}
+#search {
+  width: 100%;
+  padding: .85rem 1rem;
+  font-size: 1.05rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+}
+#search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.hint {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .8rem;
+  color: var(--muted);
+  margin: .75rem 0 0;
+}
+
+/* ---- placeholder ---- */
+.placeholder { padding: 3rem 0 5rem; color: var(--muted); }
+.placeholder p { max-width: 52ch; }
+
+/* ---- result card ---- */
+.result { padding: 2.5rem 0 5rem; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.card-id {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: .95rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  padding: .2rem .55rem;
+  border-radius: 5px;
+  margin-right: .6rem;
+}
+.card-cat {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+}
+.card-status {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .75rem;
+  letter-spacing: .04em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid #cfe0d4;
+  padding: .25rem .65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.card-title {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+}
+.card-norm-label,
+.card-excuse-label {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin: 0 0 .35rem;
+}
+.card-norm {
+  margin: 0 0 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+  color: #34373c;
+}
+.card-excuse {
+  margin: 0 0 1.75rem;
+  padding: 0 0 0 1.25rem;
+  border-left: 3px solid var(--accent);
+  font-size: 1.18rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.card-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .92rem;
+  padding: .65rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  background: var(--surface);
+  color: var(--ink);
+  transition: transform .04s ease, background .15s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-primary:hover { background: #0f3d22; }
+.btn-ghost:hover { background: var(--accent-soft); border-color: #cfe0d4; }
+.btn-random { margin-top: 1rem; }
+.btn-better { background: #5b3a86; color: #fff; border-color: #5b3a86; }
+.btn-better:hover { background: #4a2f6e; }
+.btn-ultra { background: #7a1f2b; color: #fff; border-color: #7a1f2b; }
+.btn-ultra:hover { background: #611821; }
+.copy-feedback {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .82rem;
+  color: var(--accent);
+  margin: 1rem 0 0;
+}
+
+/* ---- footer ---- */
+.footer {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  padding: 2.5rem 0 3.5rem;
+}
+.disclaimer { font-size: .95rem; color: #34373c; max-width: 64ch; }
+.footer-meta {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .78rem;
+  color: var(--muted);
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 560px) {
+  .hero { padding: 3rem 0 2.5rem; }
+  .card { padding: 1.5rem; }
+}

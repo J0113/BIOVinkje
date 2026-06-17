@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BIOVinkje&nbsp;— compliance zonder de last van implementatie</title>
+  <meta name="description" content="Genereer in één klik een audit-proof excuus waarom uw organisatie nét niet voldoet aan een BIO2-maatregel. Satire." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <span class="brand">BIO<span class="brand-accent">Vinkje</span><span class="tm">®</span></span>
+      <span class="brand-sub">Assurance-as-a-Narrative</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Bestuurlijk verantwoord · auditgereed · vrijblijvend</p>
+        <h1>Voldoe aan de BIO2.<br />Of leg overtuigend uit waarom nog niet.</h1>
+        <p class="lede">
+          Echte beveiliging kost tijd, geld en daadkracht. Een goed geformuleerd
+          excuus kost één vergadering. <strong><span class="brand">BIO<span class="brand-accent">Vinkje</span><span class="tm">®</span></span></strong> genereert per
+          maatregel een professioneel klinkende reden waarom de control
+          &ldquo;procedureel is geborgd&rdquo; maar operationeel nog even niet.
+        </p>
+        <a class="cta-scroll" href="#kiezer">Begin met verantwoorden ↓</a>
+      </div>
+    </section>
+
+    <section id="kiezer" class="selector">
+      <div class="wrap">
+        <h2>1 · Kies de maatregel die u liever niet implementeert</h2>
+        <label class="field">
+          <span class="field-label">BIO2-maatregel (zoek op nummer of trefwoord)</span>
+          <input
+            id="search"
+            list="controls"
+            autocomplete="off"
+            placeholder="bv. 8.16 logging, of 5.01 beleid…"
+          />
+          <datalist id="controls"></datalist>
+        </label>
+        <button id="random" class="btn btn-ghost btn-random" type="button">Verras mij met een maatregel 🎲</button>
+        <p class="hint" id="count-hint"></p>
+      </div>
+    </section>
+
+    <section class="result wrap" id="result" hidden>
+      <article class="card" id="card">
+        <div class="card-head">
+          <div>
+            <span class="card-id" id="c-id">—</span>
+            <span class="card-cat" id="c-cat">—</span>
+          </div>
+          <span class="card-status" id="c-status">In heroverweging</span>
+        </div>
+        <h3 class="card-title" id="c-title">—</h3>
+        <p class="card-norm-label">De norm verlangt:</p>
+        <p class="card-norm" id="c-norm">—</p>
+
+        <p class="card-excuse-label">Bestuurlijke duiding:</p>
+        <blockquote class="card-excuse" id="c-excuse">—</blockquote>
+
+        <div class="card-actions">
+          <button id="regen" class="btn btn-primary" type="button">Genereer nieuw excuus</button>
+          <button id="better" class="btn btn-better" type="button">Genereer beter excuus ✦</button>
+          <button id="evenbetter" class="btn btn-ultra" type="button" hidden>Genereer een nóg beter excuus ✦✦</button>
+          <button id="escalate" class="btn btn-ghost" type="button">Escaleer bestuurlijk ↑</button>
+          <button id="copy" class="btn btn-ghost" type="button">Kopieer voor auditdossier</button>
+        </div>
+        <p class="copy-feedback" id="copy-feedback" hidden>Gekopieerd. Plak gerust in uw managementsamenvatting.</p>
+      </article>
+    </section>
+
+    <section class="placeholder wrap" id="placeholder">
+      <p>Nog geen maatregel geselecteerd. Uw verantwoording is daarmee
+      momenteel <em>nihil</em> — wat in deze sector overigens als
+      &ldquo;in lijn met de risicobereidheid&rdquo; geldt.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer-meta">
+        Geen cookies · geen backend · geen verantwoording afgelegd ·
+        <span id="year"></span> · niet gelieerd aan enige toezichthouder
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
